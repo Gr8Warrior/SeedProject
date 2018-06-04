@@ -1,0 +1,24 @@
+PODS:
+  - Alamofire (4.7.2)
+  - SwiftLint (0.25.1)
+  - SwiftyBeaver (1.6.0)
+
+DEPENDENCIES:
+  - Alamofire (~> 4.7)
+  - SwiftLint
+  - SwiftyBeaver
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - SwiftLint
+    - SwiftyBeaver
+
+SPEC CHECKSUMS:
+  Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
+  SwiftLint: ce933681be10c3266e82576dad676fa815a602e9
+  SwiftyBeaver: e45759613e50b522b0e6f53b1f0f14389b45ca34
+
+PODFILE CHECKSUM: 45032489018f1ddd843fb401fc2b8ef211cfb5d3
+
+COCOAPODS: 1.5.3
