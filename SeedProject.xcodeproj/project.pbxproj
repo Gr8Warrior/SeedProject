@@ -40,6 +40,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2908427D20C5ADA10092F1E8 /* loginScreen */ = {
+			isa = PBXGroup;
+			children = (
+				2908427E20C5ADA10092F1E8 /* controller */,
+				2908427F20C5ADA10092F1E8 /* model */,
+				2908428020C5ADA10092F1E8 /* view */,
+			);
+			path = loginScreen;
+			sourceTree = "<group>";
+		};
+		2908427E20C5ADA10092F1E8 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				296FF01620C5AA66008E107D /* ViewController.swift */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		2908427F20C5ADA10092F1E8 /* model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		2908428020C5ADA10092F1E8 /* view */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
 		296FF00820C5AA66008E107D = {
 			isa = PBXGroup;
 			children = (
@@ -61,8 +93,8 @@
 		296FF01320C5AA66008E107D /* SeedProject */ = {
 			isa = PBXGroup;
 			children = (
+				2908427D20C5ADA10092F1E8 /* loginScreen */,
 				296FF01420C5AA66008E107D /* AppDelegate.swift */,
-				296FF01620C5AA66008E107D /* ViewController.swift */,
 				296FF01820C5AA66008E107D /* Main.storyboard */,
 				296FF01B20C5AA66008E107D /* Assets.xcassets */,
 				296FF01D20C5AA66008E107D /* LaunchScreen.storyboard */,
@@ -100,6 +132,7 @@
 				296FF00E20C5AA66008E107D /* Frameworks */,
 				296FF00F20C5AA66008E107D /* Resources */,
 				88932D505BF481DA0386179C /* [CP] Embed Pods Frameworks */,
+				2908428120C5AFDF0092F1E8 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -158,6 +191,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		2908428120C5AFDF0092F1E8 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint does not exist, download it from https://github.com/realm/SwiftLint\"\nfi";
+		};
 		88932D505BF481DA0386179C /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
