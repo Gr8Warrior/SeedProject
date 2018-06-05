@@ -10,5 +10,7 @@ import Foundation
 
 struct Endpoints {
     
-    static let users = "http://localhost:3000/users"
+    static let register = "https://reqres.in/api/register"
+    static let login = "https://reqres.in/api/login"
+    
 }

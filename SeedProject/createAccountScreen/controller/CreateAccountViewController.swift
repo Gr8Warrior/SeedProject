@@ -48,11 +48,11 @@ class CreateAccountViewController: UIViewController {
     @IBAction func createAccount(_ sender: Any) {
         
         if validateFields() {
-            let url = URL(string: Endpoints.users)
+            let url = URL(string: Endpoints.register)
             
             let parameters: [String: Any]? = [
-                "id" : emailTextField.text ?? "Test" ,
-                "password" : confirmPasswordTextField.text ?? "test"
+                "email" : emailTextField.text ?? "" ,
+                "password" : confirmPasswordTextField.text ?? ""
             ]
             let headers: [String: String] = [
                 "content-Type" : "application/json"

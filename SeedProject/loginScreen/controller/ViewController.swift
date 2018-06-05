@@ -10,6 +10,10 @@ import UIKit
 import Alamofire
 class ViewController: UIViewController {
 
+    @IBOutlet weak var emailTextField: UITextField!
+    
+    @IBOutlet weak var passwordTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         edgesForExtendedLayout = UIRectEdge()
@@ -24,6 +28,22 @@ class ViewController: UIViewController {
     }
     
     @IBAction func signIn(_ sender: UIButton) {
-        print("sha")
+        
+        let parameters: [String: Any]? = [
+            "email" : emailTextField.text ?? "" ,
+            "password" : passwordTextField.text ?? ""
+        ]
+        let headers: [String: String] = [
+            "content-Type" : "application/json"
+        ]
+        
+        let url = URL(string: Endpoints.login)
+        Alamofire.request(url!, method: .post,
+                          parameters: parameters,
+                          encoding: JSONEncoding.default,
+                          headers: headers)
+            .responseJSON { (response) in
+                            print(response)
+        }
     }
 }
