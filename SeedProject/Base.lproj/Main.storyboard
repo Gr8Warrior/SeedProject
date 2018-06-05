@@ -126,7 +126,6 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Q5Y-hp-EhR" firstAttribute="trailing" secondItem="bED-fm-8nY" secondAttribute="trailing" constant="20" id="10l-u8-GYh"/>
                             <constraint firstItem="bRs-k0-BGl" firstAttribute="top" secondItem="VjT-pT-Kda" secondAttribute="bottom" constant="30" id="1tT-XB-y6H"/>
                             <constraint firstItem="Q5Y-hp-EhR" firstAttribute="trailing" secondItem="VjT-pT-Kda" secondAttribute="trailing" constant="20" id="2Rm-QK-1Ml"/>
                             <constraint firstItem="bED-fm-8nY" firstAttribute="centerY" secondItem="BOF-g1-v8w" secondAttribute="centerY" id="5kn-Ir-eel"/>
@@ -142,10 +141,15 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Q5Y-hp-EhR"/>
                     </view>
+                    <connections>
+                        <outlet property="confirmPasswordTextField" destination="bED-fm-8nY" id="dpt-g6-Tji"/>
+                        <outlet property="emailTextField" destination="VjT-pT-Kda" id="71a-fK-Vcs"/>
+                        <outlet property="passwordTextField" destination="bRs-k0-BGl" id="sWW-zs-97l"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OJV-k2-aZc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1840.8" y="33.733133433283363"/>
+            <point key="canvasLocation" x="1637" y="34"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="cHR-fn-MRV">
@@ -163,7 +167,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qAM-KG-szf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="290" y="34"/>
+            <point key="canvasLocation" x="623" y="34"/>
         </scene>
     </scenes>
 </document>
