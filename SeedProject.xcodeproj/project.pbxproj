@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2908428720C646730092F1E8 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2908428420C646730092F1E8 /* CreateAccountViewController.swift */; };
 		296FF01520C5AA66008E107D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296FF01420C5AA66008E107D /* AppDelegate.swift */; };
 		296FF01720C5AA66008E107D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296FF01620C5AA66008E107D /* ViewController.swift */; };
 		296FF01A20C5AA66008E107D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 296FF01820C5AA66008E107D /* Main.storyboard */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2908428420C646730092F1E8 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		296FF01120C5AA66008E107D /* SeedProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeedProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		296FF01420C5AA66008E107D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		296FF01620C5AA66008E107D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -72,6 +74,38 @@
 			path = view;
 			sourceTree = "<group>";
 		};
+		2908428220C646730092F1E8 /* createAccountScreen */ = {
+			isa = PBXGroup;
+			children = (
+				2908428320C646730092F1E8 /* controller */,
+				2908428520C646730092F1E8 /* model */,
+				2908428620C646730092F1E8 /* view */,
+			);
+			path = createAccountScreen;
+			sourceTree = "<group>";
+		};
+		2908428320C646730092F1E8 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				2908428420C646730092F1E8 /* CreateAccountViewController.swift */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		2908428520C646730092F1E8 /* model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		2908428620C646730092F1E8 /* view */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
 		296FF00820C5AA66008E107D = {
 			isa = PBXGroup;
 			children = (
@@ -93,6 +127,7 @@
 		296FF01320C5AA66008E107D /* SeedProject */ = {
 			isa = PBXGroup;
 			children = (
+				2908428220C646730092F1E8 /* createAccountScreen */,
 				2908427D20C5ADA10092F1E8 /* loginScreen */,
 				296FF01420C5AA66008E107D /* AppDelegate.swift */,
 				296FF01820C5AA66008E107D /* Main.storyboard */,
@@ -249,6 +284,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2908428720C646730092F1E8 /* CreateAccountViewController.swift in Sources */,
 				296FF01720C5AA66008E107D /* ViewController.swift in Sources */,
 				296FF01520C5AA66008E107D /* AppDelegate.swift in Sources */,
 			);
