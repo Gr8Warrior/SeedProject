@@ -12,6 +12,8 @@
 		2908428C20C66DB80092F1E8 /* HTTPStatusCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2908428B20C66DB80092F1E8 /* HTTPStatusCode.swift */; };
 		2908429620C6AE5E0092F1E8 /* ListUsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2908429520C6AE5E0092F1E8 /* ListUsersViewController.swift */; };
 		2908429820C6AEDF0092F1E8 /* ListUsers.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2908429720C6AEDF0092F1E8 /* ListUsers.storyboard */; };
+		2908429A20C7C4500092F1E8 /* GetUserTypesParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2908429920C7C4500092F1E8 /* GetUserTypesParser.swift */; };
+		2908429C20C7C47A0092F1E8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2908429B20C7C47A0092F1E8 /* User.swift */; };
 		296FF01520C5AA66008E107D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296FF01420C5AA66008E107D /* AppDelegate.swift */; };
 		296FF01720C5AA66008E107D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296FF01620C5AA66008E107D /* ViewController.swift */; };
 		296FF01A20C5AA66008E107D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 296FF01820C5AA66008E107D /* Main.storyboard */; };
@@ -26,6 +28,8 @@
 		2908428B20C66DB80092F1E8 /* HTTPStatusCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPStatusCode.swift; sourceTree = "<group>"; };
 		2908429520C6AE5E0092F1E8 /* ListUsersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListUsersViewController.swift; sourceTree = "<group>"; };
 		2908429720C6AEDF0092F1E8 /* ListUsers.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ListUsers.storyboard; sourceTree = "<group>"; };
+		2908429920C7C4500092F1E8 /* GetUserTypesParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserTypesParser.swift; sourceTree = "<group>"; };
+		2908429B20C7C47A0092F1E8 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		296FF01120C5AA66008E107D /* SeedProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeedProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		296FF01420C5AA66008E107D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		296FF01620C5AA66008E107D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -144,6 +148,8 @@
 		2908429320C6AE250092F1E8 /* model */ = {
 			isa = PBXGroup;
 			children = (
+				2908429920C7C4500092F1E8 /* GetUserTypesParser.swift */,
+				2908429B20C7C47A0092F1E8 /* User.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -341,8 +347,10 @@
 				2908428720C646730092F1E8 /* CreateAccountViewController.swift in Sources */,
 				296FF01720C5AA66008E107D /* ViewController.swift in Sources */,
 				2908429620C6AE5E0092F1E8 /* ListUsersViewController.swift in Sources */,
+				2908429C20C7C47A0092F1E8 /* User.swift in Sources */,
 				296FF01520C5AA66008E107D /* AppDelegate.swift in Sources */,
 				2908428920C64F210092F1E8 /* Constants.swift in Sources */,
+				2908429A20C7C4500092F1E8 /* GetUserTypesParser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

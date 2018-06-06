@@ -8,21 +8,36 @@
 
 import UIKit
 
-class ListUsersViewController: UIViewController {
-
+class ListUsersViewController: UIViewController, GetUserTypesParserDelegate {
+    
+    var parser: GetUserTypesParser?
+    var tableOfUserTypes: UITableView?
+    var userTypes: [User]?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = UIColor.white
         edgesForExtendedLayout = UIRectEdge()
-        view.backgroundColor = UIColor.red
-        // Do any additional setup after loading the view.
+        
+        parser = GetUserTypesParser()
+        parser?.delegate = self
+        parser!.getUserTypes()
+        
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    func loadTableOfUserTypes() {
+        tableOfUserTypes = UITableView(frame: self.view.frame)
+        tableOfUserTypes?.dataSource = self
+        tableOfUserTypes?.delegate = self
+        self.view.addSubview(tableOfUserTypes!)
+        self.tableOfUserTypes?.reloadData()
     }
-
-    /*
+    
+    func didReceiveUserTypes(_ userTypes: [User]) {
+        print("Shailu \(userTypes.count)")
+        self.userTypes = userTypes
+        loadTableOfUserTypes()
+    }    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
