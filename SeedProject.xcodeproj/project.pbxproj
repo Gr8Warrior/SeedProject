@@ -10,6 +10,8 @@
 		2908428720C646730092F1E8 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2908428420C646730092F1E8 /* CreateAccountViewController.swift */; };
 		2908428920C64F210092F1E8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2908428820C64F210092F1E8 /* Constants.swift */; };
 		2908428C20C66DB80092F1E8 /* HTTPStatusCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2908428B20C66DB80092F1E8 /* HTTPStatusCode.swift */; };
+		2908429620C6AE5E0092F1E8 /* ListUsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2908429520C6AE5E0092F1E8 /* ListUsersViewController.swift */; };
+		2908429820C6AEDF0092F1E8 /* ListUsers.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2908429720C6AEDF0092F1E8 /* ListUsers.storyboard */; };
 		296FF01520C5AA66008E107D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296FF01420C5AA66008E107D /* AppDelegate.swift */; };
 		296FF01720C5AA66008E107D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296FF01620C5AA66008E107D /* ViewController.swift */; };
 		296FF01A20C5AA66008E107D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 296FF01820C5AA66008E107D /* Main.storyboard */; };
@@ -22,6 +24,8 @@
 		2908428420C646730092F1E8 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		2908428820C64F210092F1E8 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		2908428B20C66DB80092F1E8 /* HTTPStatusCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPStatusCode.swift; sourceTree = "<group>"; };
+		2908429520C6AE5E0092F1E8 /* ListUsersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListUsersViewController.swift; sourceTree = "<group>"; };
+		2908429720C6AEDF0092F1E8 /* ListUsers.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ListUsers.storyboard; sourceTree = "<group>"; };
 		296FF01120C5AA66008E107D /* SeedProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeedProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		296FF01420C5AA66008E107D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		296FF01620C5AA66008E107D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -119,6 +123,38 @@
 			path = Global;
 			sourceTree = "<group>";
 		};
+		2908429120C6AE250092F1E8 /* listUserScreen */ = {
+			isa = PBXGroup;
+			children = (
+				2908429220C6AE250092F1E8 /* controller */,
+				2908429320C6AE250092F1E8 /* model */,
+				2908429420C6AE250092F1E8 /* view */,
+			);
+			path = listUserScreen;
+			sourceTree = "<group>";
+		};
+		2908429220C6AE250092F1E8 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				2908429520C6AE5E0092F1E8 /* ListUsersViewController.swift */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		2908429320C6AE250092F1E8 /* model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		2908429420C6AE250092F1E8 /* view */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
 		296FF00820C5AA66008E107D = {
 			isa = PBXGroup;
 			children = (
@@ -140,6 +176,7 @@
 		296FF01320C5AA66008E107D /* SeedProject */ = {
 			isa = PBXGroup;
 			children = (
+				2908429120C6AE250092F1E8 /* listUserScreen */,
 				2908428A20C64F2A0092F1E8 /* Global */,
 				2908428220C646730092F1E8 /* createAccountScreen */,
 				2908427D20C5ADA10092F1E8 /* loginScreen */,
@@ -148,6 +185,7 @@
 				296FF01B20C5AA66008E107D /* Assets.xcassets */,
 				296FF01D20C5AA66008E107D /* LaunchScreen.storyboard */,
 				296FF02020C5AA66008E107D /* Info.plist */,
+				2908429720C6AEDF0092F1E8 /* ListUsers.storyboard */,
 			);
 			path = SeedProject;
 			sourceTree = "<group>";
@@ -232,6 +270,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				296FF01F20C5AA66008E107D /* LaunchScreen.storyboard in Resources */,
+				2908429820C6AEDF0092F1E8 /* ListUsers.storyboard in Resources */,
 				296FF01C20C5AA66008E107D /* Assets.xcassets in Resources */,
 				296FF01A20C5AA66008E107D /* Main.storyboard in Resources */,
 			);
@@ -301,6 +340,7 @@
 				2908428C20C66DB80092F1E8 /* HTTPStatusCode.swift in Sources */,
 				2908428720C646730092F1E8 /* CreateAccountViewController.swift in Sources */,
 				296FF01720C5AA66008E107D /* ViewController.swift in Sources */,
+				2908429620C6AE5E0092F1E8 /* ListUsersViewController.swift in Sources */,
 				296FF01520C5AA66008E107D /* AppDelegate.swift in Sources */,
 				2908428920C64F210092F1E8 /* Constants.swift in Sources */,
 			);
