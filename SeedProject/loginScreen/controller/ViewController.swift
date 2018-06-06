@@ -45,7 +45,7 @@ class ViewController: UIViewController {
             .responseJSON { (response) in
                             print(response)
                 let viewControllerYouWantToPresent = UIStoryboard(name: "ListUsers", bundle: nil)
-                    .instantiateViewController(withIdentifier: "ListUsersViewController")
+                    .instantiateViewController(withIdentifier: "ListNav")
                 self.present(viewControllerYouWantToPresent, animated: true, completion: nil)
         }
     }
