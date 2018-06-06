@@ -52,12 +52,20 @@ class ListUsersViewController: UIViewController, GetUserTypesParserDelegate {
 extension ListUsersViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return userTypes?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        return cell
+        var cell = tableView.dequeueReusableCell(withIdentifier: "user")
+        
+        if cell == nil {
+            cell = UITableViewCell.init(style: UITableViewCellStyle.subtitle, reuseIdentifier: "user")
+        }
+        let user = userTypes![indexPath.row]
+        cell?.textLabel?.text = user.firstName
+        cell?.detailTextLabel?.text = user.lastName
+        
+        return cell!
     }
     
 }

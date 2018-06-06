@@ -40,7 +40,7 @@ class GetUserTypesParser: NSObject, URLSessionDelegate, URLSessionDownloadDelega
          5. Get the data
          */
         
-        let url = URL(string: "http://test.chatongo.in/api/GetUserTypes")
+        let url = URL(string: "https://reqres.in/api/users?page=2")
         
         let task = session.downloadTask(with: url!)
         
@@ -67,8 +67,8 @@ class GetUserTypesParser: NSObject, URLSessionDelegate, URLSessionDownloadDelega
             let result = try JSONSerialization.jsonObject(
                 with: webData!, options: JSONSerialization.ReadingOptions.mutableContainers) as! [String: Any]
             
-            let status = result["Status"] as! Int
-            if status == 200 {
+           // let status = result["Status"] as! Int
+           // if status == 200 {
                 let data = result["data"] as! [[String: Any]]
                 var userTypes: [User] = []
                 
@@ -81,7 +81,7 @@ class GetUserTypesParser: NSObject, URLSessionDelegate, URLSessionDownloadDelega
                         self.delegate?.didReceiveUserTypes(userTypes)
                     }
                 }
-            }
+           // }
             
         } catch {
             DispatchQueue.main.async {
