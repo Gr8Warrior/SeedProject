@@ -20,6 +20,8 @@
 		296FF01C20C5AA66008E107D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 296FF01B20C5AA66008E107D /* Assets.xcassets */; };
 		296FF01F20C5AA66008E107D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 296FF01D20C5AA66008E107D /* LaunchScreen.storyboard */; };
 		B1EFF5A220C904B7008213E7 /* AddUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EFF5A120C904B7008213E7 /* AddUserViewController.swift */; };
+		B1EFF5A420C90807008213E7 /* GetBooksTypesParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EFF5A320C90807008213E7 /* GetBooksTypesParser.swift */; };
+		B1EFF5A620C90888008213E7 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EFF5A520C90888008213E7 /* Book.swift */; };
 		E50D0C94BD3E2D21CBBBCD3A /* Pods_SeedProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50A59E5647796C8167CD78D4 /* Pods_SeedProject.framework */; };
 /* End PBXBuildFile section */
 
@@ -42,6 +44,8 @@
 		6F92478E8EAEE1108A7AC7C5 /* Pods-SeedProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SeedProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-SeedProject/Pods-SeedProject.release.xcconfig"; sourceTree = "<group>"; };
 		AB3DC718722B81B3DE049BA3 /* Pods-SeedProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SeedProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SeedProject/Pods-SeedProject.debug.xcconfig"; sourceTree = "<group>"; };
 		B1EFF5A120C904B7008213E7 /* AddUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUserViewController.swift; sourceTree = "<group>"; };
+		B1EFF5A320C90807008213E7 /* GetBooksTypesParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetBooksTypesParser.swift; sourceTree = "<group>"; };
+		B1EFF5A520C90888008213E7 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +155,8 @@
 			isa = PBXGroup;
 			children = (
 				2908429920C7C4500092F1E8 /* GetUserTypesParser.swift */,
+				B1EFF5A520C90888008213E7 /* Book.swift */,
+				B1EFF5A320C90807008213E7 /* GetBooksTypesParser.swift */,
 				2908429B20C7C47A0092F1E8 /* User.swift */,
 			);
 			path = model;
@@ -211,6 +217,7 @@
 		B1EFF59F20C90486008213E7 /* AddUserScreen */ = {
 			isa = PBXGroup;
 			children = (
+				B1EFF5A720C90948008213E7 /* model */,
 				B1EFF5A020C9049D008213E7 /* controller */,
 			);
 			path = AddUserScreen;
@@ -222,6 +229,13 @@
 				B1EFF5A120C904B7008213E7 /* AddUserViewController.swift */,
 			);
 			path = controller;
+			sourceTree = "<group>";
+		};
+		B1EFF5A720C90948008213E7 /* model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = model;
 			sourceTree = "<group>";
 		};
 		DD0F65DBB4C3DA6FF7D01C01 /* Frameworks */ = {
@@ -365,9 +379,11 @@
 				2908428C20C66DB80092F1E8 /* HTTPStatusCode.swift in Sources */,
 				B1EFF5A220C904B7008213E7 /* AddUserViewController.swift in Sources */,
 				2908428720C646730092F1E8 /* CreateAccountViewController.swift in Sources */,
+				B1EFF5A620C90888008213E7 /* Book.swift in Sources */,
 				296FF01720C5AA66008E107D /* ViewController.swift in Sources */,
 				2908429620C6AE5E0092F1E8 /* ListUsersViewController.swift in Sources */,
 				2908429C20C7C47A0092F1E8 /* User.swift in Sources */,
+				B1EFF5A420C90807008213E7 /* GetBooksTypesParser.swift in Sources */,
 				296FF01520C5AA66008E107D /* AppDelegate.swift in Sources */,
 				2908428920C64F210092F1E8 /* Constants.swift in Sources */,
 				2908429A20C7C4500092F1E8 /* GetUserTypesParser.swift in Sources */,

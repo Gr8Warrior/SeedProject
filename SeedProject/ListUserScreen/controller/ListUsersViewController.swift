@@ -8,45 +8,26 @@
 
 import UIKit
 
-class ListUsersViewController: UIViewController, GetUserTypesParserDelegate {
+class ListUsersViewController: UIViewController, GetBookTypesParserDelegate {
     
-    var parser: GetUserTypesParser?
+    var parser: GetBooksTypesParser?
+    //var booksParser: GetBooksTypesParser?
     var tableOfUserTypes: UITableView?
-    var userTypes: [User]?
+    var bookTypes: [Book]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.white
-        edgesForExtendedLayout = UIRectEdge()
+        //edgesForExtendedLayout = UIRectEdge()
         
-        parser = GetUserTypesParser()
+        parser = GetBooksTypesParser()
         parser?.delegate = self
-        parser!.getUserTypes()
-        
-        //loadBarButtons()
+        parser!.getBookTypes()
         
     }
     
-    func loadBarButtons() {
-        let logoutButton = UIBarButtonItem(title: "Logout",
-                                           style: UIBarButtonItemStyle.done,
-                                           target: self, action: #selector(ListUsersViewController.logout))
+    override func viewDidAppear(_ animated: Bool) {
         
-        let addButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.add,
-                                  target: self,
-                                  action: #selector(ListUsersViewController.add))
-        
-        self.navigationItem.leftBarButtonItem  = logoutButton
-        self.navigationItem.rightBarButtonItem  = addButton
-        
-    }
-    
-    @objc func logout() {
-        print("logout")
-    }
-    
-    @objc func add() {
-        print("add")
     }
     
     func loadTableOfUserTypes() {
@@ -57,11 +38,12 @@ class ListUsersViewController: UIViewController, GetUserTypesParserDelegate {
         self.tableOfUserTypes?.reloadData()
     }
     
-    func didReceiveUserTypes(_ userTypes: [User]) {
-        print("Shailu \(userTypes.count)")
-        self.userTypes = userTypes
+    func didReceiveBookTypes(_ bookTypes: [Book]) {
+        print("Shailu \(bookTypes.count)")
+        self.bookTypes = bookTypes
         loadTableOfUserTypes()
-    }    /*
+    }
+    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -76,7 +58,7 @@ class ListUsersViewController: UIViewController, GetUserTypesParserDelegate {
 extension ListUsersViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return userTypes?.count ?? 0
+        return bookTypes?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -85,9 +67,9 @@ extension ListUsersViewController: UITableViewDelegate, UITableViewDataSource {
         if cell == nil {
             cell = UITableViewCell.init(style: UITableViewCellStyle.subtitle, reuseIdentifier: "user")
         }
-        let user = userTypes![indexPath.row]
-        cell?.textLabel?.text = user.firstName
-        cell?.detailTextLabel?.text = user.lastName
+        let user = bookTypes![indexPath.row]
+        cell?.textLabel?.text = user.name
+        cell?.detailTextLabel?.text = user.bookDescription
         
         return cell!
     }
