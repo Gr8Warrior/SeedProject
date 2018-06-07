@@ -12,8 +12,9 @@ import Alamofire
 class ListUsersViewController: UIViewController, GetBookTypesParserDelegate {
     
     var parser: GetBooksTypesParser?
-    var tableOfBooksTypes: UITableView?
+    var booksTableView: UITableView?
     var bookTypes: [Book]?
+    var deleteBookIndexPath: IndexPath?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,17 +32,69 @@ class ListUsersViewController: UIViewController, GetBookTypesParserDelegate {
     }
     
     func loadTableOfUserTypes() {
-        tableOfBooksTypes = UITableView(frame: self.view.frame)
-        tableOfBooksTypes?.dataSource = self
-        tableOfBooksTypes?.delegate = self
-        self.view.addSubview(tableOfBooksTypes!)
-        self.tableOfBooksTypes?.reloadData()
+        booksTableView = UITableView(frame: self.view.frame)
+        booksTableView?.dataSource = self
+        booksTableView?.delegate = self
+        self.view.addSubview(booksTableView!)
+        self.booksTableView?.reloadData()
     }
     
     func didReceiveBookTypes(_ bookTypes: [Book]) {
         print("Shailu \(bookTypes.count)")
         self.bookTypes = bookTypes
         loadTableOfUserTypes()
+    }
+    
+    func confirmDelete(book: String) {
+        let alert = UIAlertController(title: "Delete Planet",
+                                      message: "Are you sure you want to permanently delete \(book)?",
+            preferredStyle: .actionSheet)
+        
+        let DeleteAction = UIAlertAction(title: "Delete", style: .destructive, handler: handleDeleteBook)
+        let CancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: cancelDeleteBook)
+        
+        alert.addAction(DeleteAction)
+        alert.addAction(CancelAction)
+        
+        // Support display in iPad
+        alert.popoverPresentationController?.sourceView = self.view
+        alert.popoverPresentationController?.sourceRect = CGRect(x: self.view.bounds.size.width/2.0,
+                                                                 y: self.view.bounds.size.height / 2.0,
+                                                                 width: 1.0, height: 1.0)
+           // CGRect(self.view.bounds.size.width / 2.0, self.view.bounds.size.height / 2.0, 1.0, 1.0)
+        
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    func handleDeleteBook(alertAction: UIAlertAction!) {
+        if let indexPath = deleteBookIndexPath {
+            
+            let headers: [String: String] = [
+                "content-Type" : "application/json"
+            ]
+            let id = bookTypes![indexPath.row].id!
+            let url = URL(string: "http://localhost:3000/books/\(String(describing: id))")
+            Alamofire.request(url!, method: .delete,
+                              parameters: nil,
+                              encoding: JSONEncoding.default,
+                              headers: headers).responseString(completionHandler: { (response) in
+                                print(response)
+            })
+            booksTableView?.beginUpdates()
+            
+            bookTypes?.remove(at: indexPath.row)
+            
+            // Note that indexPath is wrapped in an array:  [indexPath]
+            booksTableView?.deleteRows(at: [indexPath], with: .automatic)
+            
+            deleteBookIndexPath = nil
+            
+            booksTableView?.endUpdates()
+        }
+    }
+    
+    func cancelDeleteBook(alertAction: UIAlertAction!) {
+        deleteBookIndexPath = nil
     }
     
 }
@@ -72,19 +125,17 @@ extension ListUsersViewController: UITableViewDelegate, UITableViewDataSource {
                    commit editingStyle: UITableViewCellEditingStyle,
                    forRowAt indexPath: IndexPath) {
         
-        let headers: [String: String] = [
-            "content-Type" : "application/json"
-        ]
-        let id = bookTypes![indexPath.row].id!
-        let url = URL(string: "http://localhost:3000/books/\(String(describing: id))")
         if (editingStyle == UITableViewCellEditingStyle.delete) {
-            Alamofire.request(url!, method: .delete,
-                              parameters: nil,
-                              encoding: JSONEncoding.default,
-                              headers: headers).responseString(completionHandler: { (response) in
-                print(response)
-                                self.tableOfBooksTypes?.reloadData()
-            })
+            deleteBookIndexPath = indexPath
+            confirmDelete(book: bookTypes![indexPath.row].name!)
+//            Alamofire.request(url!, method: .delete,
+//                              parameters: nil,
+//                              encoding: JSONEncoding.default,
+//                              headers: headers).responseString(completionHandler: { (response) in
+//                print(response)
+//                                self.tableOfBooksTypes?.reloadData()
+//            })
         }
     }
+    
 }

@@ -12,5 +12,6 @@ struct Endpoints {
     
     static let register = "https://reqres.in/api/register"
     static let login = "https://reqres.in/api/login"
+    static let books = "http://localhost:3000/books"
     
 }

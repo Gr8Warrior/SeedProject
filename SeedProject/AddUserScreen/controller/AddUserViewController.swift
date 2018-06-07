@@ -7,9 +7,44 @@
 //
 
 import UIKit
+import Alamofire
 
 class AddUserViewController: UIViewController {
 
+    @IBOutlet weak var bookNameTextfield: UITextField!
+    
+    @IBOutlet weak var bookDescriptionTextView: UITextView!
+    
+    @IBAction func saveBook(_ sender: Any) {
+            let url = URL(string: Endpoints.books)
+            
+            let parameters: [String: Any]? = [
+                "name" : bookNameTextfield.text ?? "" ,
+                "description" : bookDescriptionTextView.text ?? ""
+            ]
+            let headers: [String: String] = [
+                "content-Type" : "application/json"
+            ]
+            
+            Alamofire.request(url!, method: .post,
+                              parameters: parameters,
+                              encoding: JSONEncoding.default,
+                              headers: headers).responseJSON { response in
+                                
+                                if (response.response?.statusCode)! ==
+                                    HTTPStatusCode.created.rawValue {
+                                    print("Created")
+                                    //self.showOkAlertWithMessage(title: "Success", message: "Book sucessfully created")
+                                    print("Book successfully created")
+                                } else {
+                                    print("Book not created")
+                                    //self.showOkAlertWithMessage(title: "Failure", message: "Book not created")
+                                }
+                                
+            }
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,14 +56,4 @@ class AddUserViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

@@ -70,8 +70,16 @@
                         <viewLayoutGuide key="safeArea" id="zzr-TY-FRd"/>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="3xl-OV-CYB">
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="LdR-hx-eNl"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="LdR-hx-eNl">
+                            <connections>
+                                <action selector="saveBook:" destination="3jT-Bn-rU8" id="atV-hd-CNH"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="bookDescriptionTextView" destination="s4f-fb-bFA" id="JUe-gm-dfn"/>
+                        <outlet property="bookNameTextfield" destination="s3W-DY-g8o" id="ooh-z4-Q9c"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0mo-Xq-RvE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

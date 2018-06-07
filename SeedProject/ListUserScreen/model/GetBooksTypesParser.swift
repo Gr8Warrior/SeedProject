@@ -67,9 +67,6 @@ class GetBooksTypesParser: NSObject, URLSessionDelegate, URLSessionDownloadDeleg
             let data = try JSONSerialization.jsonObject(
                 with: webData!, options: JSONSerialization.ReadingOptions.mutableContainers) as! [[String: Any]]
             
-            // let status = result["Status"] as! Int
-            // if status == 200 {
-            //let data = result["data"] as! [[String: Any]]
             var bookTypes: [Book] = []
             
             for i in 0..<data.count {
@@ -81,12 +78,9 @@ class GetBooksTypesParser: NSObject, URLSessionDelegate, URLSessionDownloadDeleg
                     self.delegate?.didReceiveBookTypes(bookTypes)
                 }
             }
-            // }
-            
         } catch {
             DispatchQueue.main.async {
                 if self.delegate != nil {
-                    //if this is implemented
                     if self.delegate!.responds(to: #selector(GetBookTypesParserDelegate.didReceiveError)) {
                         self.delegate!.didReceiveError!()
                     }

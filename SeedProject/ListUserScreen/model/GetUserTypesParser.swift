@@ -69,7 +69,7 @@ class GetUserTypesParser: NSObject, URLSessionDelegate, URLSessionDownloadDelega
             
            // let status = result["Status"] as! Int
            // if status == 200 {
-                let data = result["data"] as! [[String: Any]]
+            if let data = result["data"] as? [[String: Any]] {
                 var userTypes: [User] = []
                 
                 for i in 0..<data.count {
@@ -81,8 +81,7 @@ class GetUserTypesParser: NSObject, URLSessionDelegate, URLSessionDownloadDelega
                         self.delegate?.didReceiveUserTypes(userTypes)
                     }
                 }
-           // }
-            
+            }      
         } catch {
             DispatchQueue.main.async {
                 if self.delegate != nil {
