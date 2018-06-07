@@ -23,7 +23,7 @@ class ListUsersViewController: UIViewController, GetUserTypesParserDelegate {
         parser?.delegate = self
         parser!.getUserTypes()
         
-        loadBarButtons()
+        //loadBarButtons()
         
     }
     

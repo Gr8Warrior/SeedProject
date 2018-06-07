@@ -19,6 +19,7 @@
 		296FF01A20C5AA66008E107D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 296FF01820C5AA66008E107D /* Main.storyboard */; };
 		296FF01C20C5AA66008E107D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 296FF01B20C5AA66008E107D /* Assets.xcassets */; };
 		296FF01F20C5AA66008E107D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 296FF01D20C5AA66008E107D /* LaunchScreen.storyboard */; };
+		B1EFF5A220C904B7008213E7 /* AddUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EFF5A120C904B7008213E7 /* AddUserViewController.swift */; };
 		E50D0C94BD3E2D21CBBBCD3A /* Pods_SeedProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50A59E5647796C8167CD78D4 /* Pods_SeedProject.framework */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +41,7 @@
 		50A59E5647796C8167CD78D4 /* Pods_SeedProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SeedProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F92478E8EAEE1108A7AC7C5 /* Pods-SeedProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SeedProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-SeedProject/Pods-SeedProject.release.xcconfig"; sourceTree = "<group>"; };
 		AB3DC718722B81B3DE049BA3 /* Pods-SeedProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SeedProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SeedProject/Pods-SeedProject.debug.xcconfig"; sourceTree = "<group>"; };
+		B1EFF5A120C904B7008213E7 /* AddUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUserViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +56,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2908427D20C5ADA10092F1E8 /* loginScreen */ = {
+		2908427D20C5ADA10092F1E8 /* LoginScreen */ = {
 			isa = PBXGroup;
 			children = (
 				2908427E20C5ADA10092F1E8 /* controller */,
 				2908427F20C5ADA10092F1E8 /* model */,
 				2908428020C5ADA10092F1E8 /* view */,
 			);
-			path = loginScreen;
+			path = LoginScreen;
 			sourceTree = "<group>";
 		};
 		2908427E20C5ADA10092F1E8 /* controller */ = {
@@ -86,14 +88,14 @@
 			path = view;
 			sourceTree = "<group>";
 		};
-		2908428220C646730092F1E8 /* createAccountScreen */ = {
+		2908428220C646730092F1E8 /* CreateAccountScreen */ = {
 			isa = PBXGroup;
 			children = (
 				2908428320C646730092F1E8 /* controller */,
 				2908428520C646730092F1E8 /* model */,
 				2908428620C646730092F1E8 /* view */,
 			);
-			path = createAccountScreen;
+			path = CreateAccountScreen;
 			sourceTree = "<group>";
 		};
 		2908428320C646730092F1E8 /* controller */ = {
@@ -127,14 +129,14 @@
 			path = Global;
 			sourceTree = "<group>";
 		};
-		2908429120C6AE250092F1E8 /* listUserScreen */ = {
+		2908429120C6AE250092F1E8 /* ListUserScreen */ = {
 			isa = PBXGroup;
 			children = (
 				2908429220C6AE250092F1E8 /* controller */,
 				2908429320C6AE250092F1E8 /* model */,
 				2908429420C6AE250092F1E8 /* view */,
 			);
-			path = listUserScreen;
+			path = ListUserScreen;
 			sourceTree = "<group>";
 		};
 		2908429220C6AE250092F1E8 /* controller */ = {
@@ -182,10 +184,11 @@
 		296FF01320C5AA66008E107D /* SeedProject */ = {
 			isa = PBXGroup;
 			children = (
-				2908429120C6AE250092F1E8 /* listUserScreen */,
+				B1EFF59F20C90486008213E7 /* AddUserScreen */,
+				2908429120C6AE250092F1E8 /* ListUserScreen */,
 				2908428A20C64F2A0092F1E8 /* Global */,
-				2908428220C646730092F1E8 /* createAccountScreen */,
-				2908427D20C5ADA10092F1E8 /* loginScreen */,
+				2908428220C646730092F1E8 /* CreateAccountScreen */,
+				2908427D20C5ADA10092F1E8 /* LoginScreen */,
 				296FF01420C5AA66008E107D /* AppDelegate.swift */,
 				296FF01820C5AA66008E107D /* Main.storyboard */,
 				296FF01B20C5AA66008E107D /* Assets.xcassets */,
@@ -203,6 +206,22 @@
 				6F92478E8EAEE1108A7AC7C5 /* Pods-SeedProject.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		B1EFF59F20C90486008213E7 /* AddUserScreen */ = {
+			isa = PBXGroup;
+			children = (
+				B1EFF5A020C9049D008213E7 /* controller */,
+			);
+			path = AddUserScreen;
+			sourceTree = "<group>";
+		};
+		B1EFF5A020C9049D008213E7 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				B1EFF5A120C904B7008213E7 /* AddUserViewController.swift */,
+			);
+			path = controller;
 			sourceTree = "<group>";
 		};
 		DD0F65DBB4C3DA6FF7D01C01 /* Frameworks */ = {
@@ -248,7 +267,7 @@
 				TargetAttributes = {
 					296FF01020C5AA66008E107D = {
 						CreatedOnToolsVersion = 9.2;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -344,6 +363,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2908428C20C66DB80092F1E8 /* HTTPStatusCode.swift in Sources */,
+				B1EFF5A220C904B7008213E7 /* AddUserViewController.swift in Sources */,
 				2908428720C646730092F1E8 /* CreateAccountViewController.swift in Sources */,
 				296FF01720C5AA66008E107D /* ViewController.swift in Sources */,
 				2908429620C6AE5E0092F1E8 /* ListUsersViewController.swift in Sources */,
@@ -488,11 +508,13 @@
 			baseConfigurationReference = AB3DC718722B81B3DE049BA3 /* Pods-SeedProject.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = SeedProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.intimetec.SeedProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -503,11 +525,13 @@
 			baseConfigurationReference = 6F92478E8EAEE1108A7AC7C5 /* Pods-SeedProject.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = SeedProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.intimetec.SeedProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
