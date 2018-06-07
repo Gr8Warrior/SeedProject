@@ -7,12 +7,12 @@
 //
 
 import UIKit
+import Alamofire
 
 class ListUsersViewController: UIViewController, GetBookTypesParserDelegate {
     
     var parser: GetBooksTypesParser?
-    //var booksParser: GetBooksTypesParser?
-    var tableOfUserTypes: UITableView?
+    var tableOfBooksTypes: UITableView?
     var bookTypes: [Book]?
     
     override func viewDidLoad() {
@@ -27,15 +27,15 @@ class ListUsersViewController: UIViewController, GetBookTypesParserDelegate {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        
+        parser!.getBookTypes()
     }
     
     func loadTableOfUserTypes() {
-        tableOfUserTypes = UITableView(frame: self.view.frame)
-        tableOfUserTypes?.dataSource = self
-        tableOfUserTypes?.delegate = self
-        self.view.addSubview(tableOfUserTypes!)
-        self.tableOfUserTypes?.reloadData()
+        tableOfBooksTypes = UITableView(frame: self.view.frame)
+        tableOfBooksTypes?.dataSource = self
+        tableOfBooksTypes?.delegate = self
+        self.view.addSubview(tableOfBooksTypes!)
+        self.tableOfBooksTypes?.reloadData()
     }
     
     func didReceiveBookTypes(_ bookTypes: [Book]) {
@@ -43,16 +43,7 @@ class ListUsersViewController: UIViewController, GetBookTypesParserDelegate {
         self.bookTypes = bookTypes
         loadTableOfUserTypes()
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    
 }
 
 extension ListUsersViewController: UITableViewDelegate, UITableViewDataSource {
@@ -73,5 +64,27 @@ extension ListUsersViewController: UITableViewDelegate, UITableViewDataSource {
         
         return cell!
     }
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
     
+    func tableView(_ tableView: UITableView,
+                   commit editingStyle: UITableViewCellEditingStyle,
+                   forRowAt indexPath: IndexPath) {
+        
+        let headers: [String: String] = [
+            "content-Type" : "application/json"
+        ]
+        let id = bookTypes![indexPath.row].id!
+        let url = URL(string: "http://localhost:3000/books/\(String(describing: id))")
+        if (editingStyle == UITableViewCellEditingStyle.delete) {
+            Alamofire.request(url!, method: .delete,
+                              parameters: nil,
+                              encoding: JSONEncoding.default,
+                              headers: headers).responseString(completionHandler: { (response) in
+                print(response)
+                                self.tableOfBooksTypes?.reloadData()
+            })
+        }
+    }
 }
