@@ -23,6 +23,30 @@ class ListUsersViewController: UIViewController, GetUserTypesParserDelegate {
         parser?.delegate = self
         parser!.getUserTypes()
         
+        loadBarButtons()
+        
+    }
+    
+    func loadBarButtons() {
+        let logoutButton = UIBarButtonItem(title: "Logout",
+                                           style: UIBarButtonItemStyle.done,
+                                           target: self, action: #selector(ListUsersViewController.logout))
+        
+        let addButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.add,
+                                  target: self,
+                                  action: #selector(ListUsersViewController.add))
+        
+        self.navigationItem.leftBarButtonItem  = logoutButton
+        self.navigationItem.rightBarButtonItem  = addButton
+        
+    }
+    
+    @objc func logout() {
+        print("logout")
+    }
+    
+    @objc func add() {
+        print("add")
     }
     
     func loadTableOfUserTypes() {
