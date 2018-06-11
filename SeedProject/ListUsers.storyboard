@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--List Users View Controller-->
+        <!--Book List-->
         <scene sceneID="RgP-6i-JLk">
             <objects>
                 <viewController storyboardIdentifier="ListUsersViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="hVw-eR-OsU" customClass="ListUsersViewController" customModule="SeedProject" customModuleProvider="target" sceneMemberID="viewController">
@@ -20,7 +20,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Ac2-7w-8lB"/>
                     </view>
-                    <navigationItem key="navigationItem" id="uoE-3p-DGD">
+                    <navigationItem key="navigationItem" title="Book List" id="uoE-3p-DGD">
                         <barButtonItem key="leftBarButtonItem" title="Logout" id="wrl-HD-3sY"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="o3W-AW-P5t">
                             <connections>
@@ -33,7 +33,7 @@
             </objects>
             <point key="canvasLocation" x="-12" y="75.112443778110944"/>
         </scene>
-        <!--Title-->
+        <!--Add Book-->
         <scene sceneID="sSh-bk-cWT">
             <objects>
                 <viewController id="3jT-Bn-rU8" customClass="AddUserViewController" customModule="SeedProject" customModuleProvider="target" sceneMemberID="viewController">
@@ -69,7 +69,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="zzr-TY-FRd"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="3xl-OV-CYB">
+                    <navigationItem key="navigationItem" title="Add Book" id="3xl-OV-CYB">
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="LdR-hx-eNl">
                             <connections>
                                 <action selector="saveBook:" destination="3jT-Bn-rU8" id="atV-hd-CNH"/>

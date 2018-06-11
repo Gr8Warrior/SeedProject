@@ -10,12 +10,12 @@ import UIKit
 
 class Book: NSObject {
     
-    var id: String?
+    var id: Int?
     var name: String?
     var bookDescription: String?
     
     init(dictionary: [String: Any]) {
-        id = dictionary["id"]! as? String
+        id = dictionary["id"]! as? Int
         name = dictionary["name"]! as? String
         bookDescription = dictionary["description"]! as? String
     }

@@ -13,7 +13,7 @@ class ListUsersViewController: UIViewController, GetBookTypesParserDelegate {
     
     var parser: GetBooksTypesParser?
     var booksTableView: UITableView?
-    var bookTypes: [Book]?
+    var bookList: [Book]?
     var deleteBookIndexPath: IndexPath?
     
     override func viewDidLoad() {
@@ -41,7 +41,7 @@ class ListUsersViewController: UIViewController, GetBookTypesParserDelegate {
     
     func didReceiveBookTypes(_ bookTypes: [Book]) {
         print("Shailu \(bookTypes.count)")
-        self.bookTypes = bookTypes
+        self.bookList = bookTypes
         loadTableOfUserTypes()
     }
     
@@ -72,8 +72,13 @@ class ListUsersViewController: UIViewController, GetBookTypesParserDelegate {
             let headers: [String: String] = [
                 "content-Type" : "application/json"
             ]
-            let id = bookTypes![indexPath.row].id!
-            let url = URL(string: "http://localhost:3000/books/\(String(describing: id))")
+            
+            guard let bookId = bookList![indexPath.row].id else {
+                return
+            }
+            
+           // let id = bookTypes![indexPath.row].id!
+            let url = URL(string: "http://localhost:3000/books/\(String(describing: bookId))")
             Alamofire.request(url!, method: .delete,
                               parameters: nil,
                               encoding: JSONEncoding.default,
@@ -82,7 +87,7 @@ class ListUsersViewController: UIViewController, GetBookTypesParserDelegate {
             })
             booksTableView?.beginUpdates()
             
-            bookTypes?.remove(at: indexPath.row)
+            bookList?.remove(at: indexPath.row)
             
             // Note that indexPath is wrapped in an array:  [indexPath]
             booksTableView?.deleteRows(at: [indexPath], with: .automatic)
@@ -102,7 +107,7 @@ class ListUsersViewController: UIViewController, GetBookTypesParserDelegate {
 extension ListUsersViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return bookTypes?.count ?? 0
+        return bookList?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -111,7 +116,7 @@ extension ListUsersViewController: UITableViewDelegate, UITableViewDataSource {
         if cell == nil {
             cell = UITableViewCell.init(style: UITableViewCellStyle.subtitle, reuseIdentifier: "user")
         }
-        let user = bookTypes![indexPath.row]
+        let user = bookList![indexPath.row]
         cell?.textLabel?.text = user.name
         cell?.detailTextLabel?.text = user.bookDescription
         
@@ -127,7 +132,7 @@ extension ListUsersViewController: UITableViewDelegate, UITableViewDataSource {
         
         if (editingStyle == UITableViewCellEditingStyle.delete) {
             deleteBookIndexPath = indexPath
-            confirmDelete(book: bookTypes![indexPath.row].name!)
+            confirmDelete(book: bookList![indexPath.row].name!)
 //            Alamofire.request(url!, method: .delete,
 //                              parameters: nil,
 //                              encoding: JSONEncoding.default,

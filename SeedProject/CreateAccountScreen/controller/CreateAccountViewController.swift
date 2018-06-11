@@ -48,7 +48,7 @@ class CreateAccountViewController: UIViewController {
     @IBAction func createAccount(_ sender: Any) {
         
         if validateFields() {
-            let url = URL(string: Endpoints.register)
+            let url = URL(string: Endpoints.localRegister)
             
             let parameters: [String: Any]? = [
                 "email" : emailTextField.text ?? "" ,
