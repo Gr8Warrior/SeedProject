@@ -131,6 +131,36 @@ extension ListBooksViewController: UITableViewDelegate, UITableViewDataSource {
         
         return cell!
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //1. Create the alert controller.
+        let alert = UIAlertController(title: "\(bookList?[indexPath.row].name!)", message: "Update name", preferredStyle: .alert)
+        
+        //2. Add the text field. You can configure it however you need.
+        alert.addTextField { (textField) in
+            textField.text = "Enter new name"
+        }
+        
+        // 3. Grab the value from the text field, and print it when the user clicks OK.
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
+            let headers: [String: String] = [
+                "content-Type" : "application/json"
+            ]
+            let url = URL(string: "http://localhost:3000/books/\((self.bookList![indexPath.row].id)!)")
+            let textField = alert?.textFields![0] // Force unwrapping because we know it exists.
+            
+            let parameters: [String: Any]? = [
+                "name" : textField?.text! ?? ""
+            ]
+            Alamofire.request(url!, method: HTTPMethod.patch, parameters: parameters, encoding: JSONEncoding.default, headers: headers).responseString(completionHandler: { (response) in
+                print("Success is")
+            })
+        }))
+        
+        // 4. Present the alert.
+        self.present(alert, animated: true, completion: nil)
+    }
+    
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
     }
@@ -142,13 +172,6 @@ extension ListBooksViewController: UITableViewDelegate, UITableViewDataSource {
         if (editingStyle == UITableViewCellEditingStyle.delete) {
             deleteBookIndexPath = indexPath
             confirmDelete(book: bookList![indexPath.row].name!)
-//            Alamofire.request(url!, method: .delete,
-//                              parameters: nil,
-//                              encoding: JSONEncoding.default,
-//                              headers: headers).responseString(completionHandler: { (response) in
-//                print(response)
-//                                self.tableOfBooksTypes?.reloadData()
-//            })
         }
     }
     
