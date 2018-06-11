@@ -19,7 +19,12 @@ class CreateAccountViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         edgesForExtendedLayout = UIRectEdge()
-        view.backgroundColor = UIColor.cyan
+        view.backgroundColor = UIColor.white
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
+        self.navigationController?.navigationBar.barTintColor = UIColor.white
+        let textAttributes = [NSAttributedStringKey.foregroundColor:UIColor.lightText]
+        navigationController?.navigationBar.titleTextAttributes = textAttributes
+        
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

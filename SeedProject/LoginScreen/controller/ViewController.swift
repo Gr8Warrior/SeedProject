@@ -17,12 +17,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         edgesForExtendedLayout = UIRectEdge()
-        view.backgroundColor = UIColor.cyan
-        self.navigationController?.setNavigationBarHidden(true, animated: true)
+        //view.backgroundColor = UIColor.white
     }
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
     @IBAction func createAccount(_ sender: Any) {
