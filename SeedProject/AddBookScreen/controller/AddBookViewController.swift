@@ -31,13 +31,21 @@ class AddBookViewController: UIViewController {
                               encoding: JSONEncoding.default,
                               headers: headers).responseJSON { response in
                                 
-                                if (response.response?.statusCode)! ==
+                                guard let response = response.response else {
+                                    self.showOkAlertWithMessage(title: "Failure", message: "Unable to create book")
+                                    log.error("Unable to fetch response")
+                                    return
+                                }
+                                if (response.statusCode) ==
                                     HTTPStatusCode.created.rawValue {
                                     print("Created")
                                     //self.showOkAlertWithMessage(title: "Success", message: "Book sucessfully created")
+                                    self.showOkAlertWithMessage(title: "Success", message: "Book sucessfully created")
                                     print("Book successfully created")
                                 } else {
                                     print("Book not created")
+                                    
+                                    self.showOkAlertWithMessage(title: "Failure", message: "Unable to create book")
                                     //self.showOkAlertWithMessage(title: "Failure", message: "Book not created")
                                 }
                                 

@@ -20,6 +20,7 @@
 		296FF01C20C5AA66008E107D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 296FF01B20C5AA66008E107D /* Assets.xcassets */; };
 		296FF01F20C5AA66008E107D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 296FF01D20C5AA66008E107D /* LaunchScreen.storyboard */; };
 		B13B2C1D20CE88190039437B /* RoundedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13B2C1C20CE88190039437B /* RoundedTextField.swift */; };
+		B13B2C1F20CE95BC0039437B /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13B2C1E20CE95BC0039437B /* Strings.swift */; };
 		B17FB78320CE79C900753BF5 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17FB78220CE79C900753BF5 /* Utility.swift */; };
 		B17FB78820CE84DE00753BF5 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17FB78720CE84DE00753BF5 /* RoundedButton.swift */; };
 		B1EFF5A220C904B7008213E7 /* AddBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EFF5A120C904B7008213E7 /* AddBookViewController.swift */; };
@@ -47,6 +48,7 @@
 		6F92478E8EAEE1108A7AC7C5 /* Pods-SeedProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SeedProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-SeedProject/Pods-SeedProject.release.xcconfig"; sourceTree = "<group>"; };
 		AB3DC718722B81B3DE049BA3 /* Pods-SeedProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SeedProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SeedProject/Pods-SeedProject.debug.xcconfig"; sourceTree = "<group>"; };
 		B13B2C1C20CE88190039437B /* RoundedTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedTextField.swift; sourceTree = "<group>"; };
+		B13B2C1E20CE95BC0039437B /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		B17FB78220CE79C900753BF5 /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		B17FB78720CE84DE00753BF5 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		B1EFF5A120C904B7008213E7 /* AddBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookViewController.swift; sourceTree = "<group>"; };
@@ -133,9 +135,8 @@
 		2908428A20C64F2A0092F1E8 /* Global */ = {
 			isa = PBXGroup;
 			children = (
+				B13B2C2020CE95C40039437B /* Constants */,
 				B17FB78620CE84C900753BF5 /* Designable */,
-				2908428820C64F210092F1E8 /* Constants.swift */,
-				2908428B20C66DB80092F1E8 /* HTTPStatusCode.swift */,
 				B17FB78220CE79C900753BF5 /* Utility.swift */,
 			);
 			path = Global;
@@ -220,6 +221,16 @@
 				6F92478E8EAEE1108A7AC7C5 /* Pods-SeedProject.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		B13B2C2020CE95C40039437B /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				B13B2C1E20CE95BC0039437B /* Strings.swift */,
+				2908428820C64F210092F1E8 /* Constants.swift */,
+				2908428B20C66DB80092F1E8 /* HTTPStatusCode.swift */,
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 		B17FB78620CE84C900753BF5 /* Designable */ = {
@@ -400,6 +411,7 @@
 				B1EFF5A620C90888008213E7 /* Book.swift in Sources */,
 				296FF01720C5AA66008E107D /* ViewController.swift in Sources */,
 				2908429620C6AE5E0092F1E8 /* ListBooksViewController.swift in Sources */,
+				B13B2C1F20CE95BC0039437B /* Strings.swift in Sources */,
 				2908429C20C7C47A0092F1E8 /* User.swift in Sources */,
 				B1EFF5A420C90807008213E7 /* GetBooksTypesParser.swift in Sources */,
 				296FF01520C5AA66008E107D /* AppDelegate.swift in Sources */,

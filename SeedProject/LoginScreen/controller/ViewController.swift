@@ -59,13 +59,13 @@ class ViewController: UIViewController {
         var isValid = false
         if (passwordTextField.text?.isEmpty)! ||
             (emailTextField.text?.isEmpty)! {
-            showOkAlertWithMessage(title: "Alert", message: "fields cant be empty")
+            showOkAlertWithMessage(title: Strings.alert.rawValue, message: Strings.no_empty.rawValue)
             return isValid
         }
         if(Utility.isValidEmail(emailString: emailTextField.text!)) {
             isValid = true
         } else {
-            showOkAlertWithMessage(title: "Alert", message: "Email format not correct")
+            showOkAlertWithMessage(title: Strings.alert.rawValue, message: Strings.email_format_incorrect.rawValue)
         }
         return isValid
     }

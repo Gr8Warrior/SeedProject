@@ -166,7 +166,7 @@ extension ListBooksViewController: UITableViewDelegate, UITableViewDataSource {
         
         //2. Add the text field. You can configure it however you need.
         alert.addTextField { (textField) in
-            textField.text = "Enter new name"
+            textField.text = (self.bookList![indexPath.row].name)!
         }
         
         // 3. Grab the value from the text field, and print it when the user clicks OK.
