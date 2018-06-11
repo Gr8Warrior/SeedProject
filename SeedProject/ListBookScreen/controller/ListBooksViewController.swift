@@ -183,7 +183,7 @@ extension ListBooksViewController: UITableViewDelegate, UITableViewDataSource {
             Alamofire.request(url!, method: HTTPMethod.patch,
                               parameters: parameters,
                               encoding: JSONEncoding.default,
-                              headers: headers).responseString(completionHandler: { (response) in
+                              headers: headers).responseString(completionHandler: { (_) in
                                 self.bookList![indexPath.row].name = bookName?.text!
                                 self.booksTableView?.reloadData()
             })
