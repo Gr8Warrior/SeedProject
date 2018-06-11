@@ -13,7 +13,7 @@
         <!--Book List-->
         <scene sceneID="RgP-6i-JLk">
             <objects>
-                <viewController storyboardIdentifier="ListUsersViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="hVw-eR-OsU" customClass="ListUsersViewController" customModule="SeedProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ListBooksViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="hVw-eR-OsU" customClass="ListBooksViewController" customModule="SeedProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZhT-lG-Vxx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -21,7 +21,11 @@
                         <viewLayoutGuide key="safeArea" id="Ac2-7w-8lB"/>
                     </view>
                     <navigationItem key="navigationItem" title="Book List" id="uoE-3p-DGD">
-                        <barButtonItem key="leftBarButtonItem" title="Logout" id="wrl-HD-3sY"/>
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="wrl-HD-3sY">
+                            <connections>
+                                <action selector="logout:" destination="hVw-eR-OsU" id="uu8-yB-HtT"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="o3W-AW-P5t">
                             <connections>
                                 <segue destination="3jT-Bn-rU8" kind="show" id="PrA-El-Zqr"/>
@@ -36,7 +40,7 @@
         <!--Add Book-->
         <scene sceneID="sSh-bk-cWT">
             <objects>
-                <viewController id="3jT-Bn-rU8" customClass="AddUserViewController" customModule="SeedProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="3jT-Bn-rU8" customClass="AddBookViewController" customModule="SeedProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Cdo-H8-g7U">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -88,7 +92,7 @@
         <!--Navigation Controller-->
         <scene sceneID="Z72-ti-d1m">
             <objects>
-                <navigationController storyboardIdentifier="ListNav" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="y90-VW-C1U" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="ListBooks" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="y90-VW-C1U" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="J6v-Lg-9ef">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>

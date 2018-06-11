@@ -9,7 +9,7 @@
 import UIKit
 import Alamofire
 
-class AddUserViewController: UIViewController {
+class AddBookViewController: UIViewController {
 
     @IBOutlet weak var bookNameTextfield: UITextField!
     

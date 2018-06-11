@@ -158,7 +158,7 @@
         <!--Navigation Controller-->
         <scene sceneID="cHR-fn-MRV">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="HNl-Po-J2U" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="loginNav" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="HNl-Po-J2U" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="IVT-Uj-PuA">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>

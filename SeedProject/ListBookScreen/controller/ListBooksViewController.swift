@@ -9,7 +9,7 @@
 import UIKit
 import Alamofire
 
-class ListUsersViewController: UIViewController, GetBookTypesParserDelegate {
+class ListBooksViewController: UIViewController, GetBookTypesParserDelegate {
     
     var parser: GetBooksTypesParser?
     var booksTableView: UITableView?
@@ -31,6 +31,15 @@ class ListUsersViewController: UIViewController, GetBookTypesParserDelegate {
         parser!.getBookTypes()
     }
     
+    @IBAction func logout(_ sender: UIBarButtonItem) {
+        log.debug("Logout")
+        log.error("No")
+        log.info("get")
+        let viewControllerYouWantToPresent = UIStoryboard(name: "Main", bundle: nil)
+            .instantiateViewController(withIdentifier: "loginNav")
+        self.present(viewControllerYouWantToPresent, animated: true, completion: nil)
+    }
+    
     func loadTableOfUserTypes() {
         booksTableView = UITableView(frame: self.view.frame)
         booksTableView?.dataSource = self
@@ -40,7 +49,7 @@ class ListUsersViewController: UIViewController, GetBookTypesParserDelegate {
     }
     
     func didReceiveBookTypes(_ bookTypes: [Book]) {
-        print("Shailu \(bookTypes.count)")
+        
         self.bookList = bookTypes
         loadTableOfUserTypes()
     }
@@ -104,7 +113,7 @@ class ListUsersViewController: UIViewController, GetBookTypesParserDelegate {
     
 }
 
-extension ListUsersViewController: UITableViewDelegate, UITableViewDataSource {
+extension ListBooksViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return bookList?.count ?? 0
