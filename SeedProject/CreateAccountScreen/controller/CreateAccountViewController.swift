@@ -37,7 +37,7 @@ class CreateAccountViewController: UIViewController {
         if (confirmPasswordTextField.text! != passwordTextField.text!) {
             showOkAlertWithMessage(title: "Alert", message: "Passwords are not matching")
         }
-        if(isValidEmail(emailString: emailTextField.text!)) {
+        if(Utility.isValidEmail(emailString: emailTextField.text!)) {
             isValid = true
         } else {
             showOkAlertWithMessage(title: "Alert", message: "Email format not correct")
@@ -57,12 +57,12 @@ class CreateAccountViewController: UIViewController {
             let headers: [String: String] = [
                 "content-Type" : "application/json"
             ]
-            
+            let sv = UIViewController.displaySpinner(onView: self.view)
             Alamofire.request(url!, method: .post,
                               parameters: parameters,
                               encoding: JSONEncoding.default,
                               headers: headers).responseJSON { response in
-                
+                UIViewController.removeSpinner(spinner: sv)
                                 if (response.response?.statusCode)! ==
                                     HTTPStatusCode.created.rawValue {
                                     print("Created")
@@ -74,22 +74,4 @@ class CreateAccountViewController: UIViewController {
             }
         }
     }
-    
-    func isValidEmail(emailString:String) -> Bool {
-        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
-        
-        let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
-        return emailTest.evaluate(with: emailString)
-    }
-    
-    func showOkAlertWithMessage(title: String, message: String) {
-        let alert = UIAlertController(title: title,
-                                      message: message,
-                                      preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: "Ok",
-                                      style: UIAlertActionStyle.default,
-                                      handler: nil))
-        self.present(alert, animated: true, completion: nil)
-    }
-    
 }

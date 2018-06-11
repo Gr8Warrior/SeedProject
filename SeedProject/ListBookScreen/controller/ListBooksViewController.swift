@@ -134,7 +134,8 @@ extension ListBooksViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //1. Create the alert controller.
-        let alert = UIAlertController(title: "\(bookList?[indexPath.row].name!)", message: "Update name", preferredStyle: .alert)
+        let alert = UIAlertController(title: "\(String(describing: bookList?[indexPath.row].name!))",
+            message: "Update name", preferredStyle: .alert)
         
         //2. Add the text field. You can configure it however you need.
         alert.addTextField { (textField) in
@@ -152,8 +153,11 @@ extension ListBooksViewController: UITableViewDelegate, UITableViewDataSource {
             let parameters: [String: Any]? = [
                 "name" : textField?.text! ?? ""
             ]
-            Alamofire.request(url!, method: HTTPMethod.patch, parameters: parameters, encoding: JSONEncoding.default, headers: headers).responseString(completionHandler: { (response) in
-                print("Success is")
+            Alamofire.request(url!, method: HTTPMethod.patch,
+                              parameters: parameters,
+                              encoding: JSONEncoding.default,
+                              headers: headers).responseString(completionHandler: { (response) in
+                print("\(response)")
             })
         }))
         

@@ -19,6 +19,7 @@
 		296FF01A20C5AA66008E107D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 296FF01820C5AA66008E107D /* Main.storyboard */; };
 		296FF01C20C5AA66008E107D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 296FF01B20C5AA66008E107D /* Assets.xcassets */; };
 		296FF01F20C5AA66008E107D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 296FF01D20C5AA66008E107D /* LaunchScreen.storyboard */; };
+		B17FB78320CE79C900753BF5 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17FB78220CE79C900753BF5 /* Utility.swift */; };
 		B1EFF5A220C904B7008213E7 /* AddBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EFF5A120C904B7008213E7 /* AddBookViewController.swift */; };
 		B1EFF5A420C90807008213E7 /* GetBooksTypesParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EFF5A320C90807008213E7 /* GetBooksTypesParser.swift */; };
 		B1EFF5A620C90888008213E7 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EFF5A520C90888008213E7 /* Book.swift */; };
@@ -43,6 +44,7 @@
 		50A59E5647796C8167CD78D4 /* Pods_SeedProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SeedProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F92478E8EAEE1108A7AC7C5 /* Pods-SeedProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SeedProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-SeedProject/Pods-SeedProject.release.xcconfig"; sourceTree = "<group>"; };
 		AB3DC718722B81B3DE049BA3 /* Pods-SeedProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SeedProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SeedProject/Pods-SeedProject.debug.xcconfig"; sourceTree = "<group>"; };
+		B17FB78220CE79C900753BF5 /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		B1EFF5A120C904B7008213E7 /* AddBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookViewController.swift; sourceTree = "<group>"; };
 		B1EFF5A320C90807008213E7 /* GetBooksTypesParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetBooksTypesParser.swift; sourceTree = "<group>"; };
 		B1EFF5A520C90888008213E7 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 			children = (
 				2908428820C64F210092F1E8 /* Constants.swift */,
 				2908428B20C66DB80092F1E8 /* HTTPStatusCode.swift */,
+				B17FB78220CE79C900753BF5 /* Utility.swift */,
 			);
 			path = Global;
 			sourceTree = "<group>";
@@ -376,6 +379,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B17FB78320CE79C900753BF5 /* Utility.swift in Sources */,
 				2908428C20C66DB80092F1E8 /* HTTPStatusCode.swift in Sources */,
 				B1EFF5A220C904B7008213E7 /* AddBookViewController.swift in Sources */,
 				2908428720C646730092F1E8 /* CreateAccountViewController.swift in Sources */,
