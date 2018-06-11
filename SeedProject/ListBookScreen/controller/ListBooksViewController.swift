@@ -35,9 +35,30 @@ class ListBooksViewController: UIViewController, GetBookTypesParserDelegate {
         log.debug("Logout")
         log.error("No")
         log.info("get")
-        let viewControllerYouWantToPresent = UIStoryboard(name: "Main", bundle: nil)
-            .instantiateViewController(withIdentifier: "loginNav")
-        self.present(viewControllerYouWantToPresent, animated: true, completion: nil)
+        
+        confirmLogout()
+    }
+    
+    func confirmLogout() {
+        let alert = UIAlertController(title: "Logout",
+                                      message: "Are you sure you want to logout?",
+            preferredStyle: .actionSheet)
+        
+        let DeleteAction = UIAlertAction(title: "Logout", style: .destructive, handler: handleLogout)
+        let CancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: cancelDeleteBook)
+        
+        alert.addAction(DeleteAction)
+        alert.addAction(CancelAction)
+        
+        // Support display in iPad
+        alert.popoverPresentationController?.sourceView = self.view
+        alert.popoverPresentationController?.sourceRect = CGRect(x: self.view.bounds.size.width/2.0,
+                                                                 y: self.view.bounds.size.height / 2.0,
+                                                                 width: 1.0, height: 1.0)
+        // CGRect(self.view.bounds.size.width / 2.0, self.view.bounds.size.height / 2.0, 1.0, 1.0)
+        
+        self.present(alert, animated: true, completion: nil)
+        
     }
     
     func loadTableOfUserTypes() {
@@ -55,7 +76,7 @@ class ListBooksViewController: UIViewController, GetBookTypesParserDelegate {
     }
     
     func confirmDelete(book: String) {
-        let alert = UIAlertController(title: "Delete Planet",
+        let alert = UIAlertController(title: "Delete Book",
                                       message: "Are you sure you want to permanently delete \(book)?",
             preferredStyle: .actionSheet)
         
@@ -73,6 +94,12 @@ class ListBooksViewController: UIViewController, GetBookTypesParserDelegate {
            // CGRect(self.view.bounds.size.width / 2.0, self.view.bounds.size.height / 2.0, 1.0, 1.0)
         
         self.present(alert, animated: true, completion: nil)
+    }
+    
+    func handleLogout(alertAction: UIAlertAction!) {
+        let viewControllerYouWantToPresent = UIStoryboard(name: "Main", bundle: nil)
+            .instantiateViewController(withIdentifier: "loginNav")
+        self.present(viewControllerYouWantToPresent, animated: true, completion: nil)
     }
     
     func handleDeleteBook(alertAction: UIAlertAction!) {
@@ -134,7 +161,7 @@ extension ListBooksViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //1. Create the alert controller.
-        let alert = UIAlertController(title: "\(String(describing: bookList?[indexPath.row].name!))",
+        let alert = UIAlertController(title: "\(String(describing: (bookList?[indexPath.row].name)!))",
             message: "Update name", preferredStyle: .alert)
         
         //2. Add the text field. You can configure it however you need.
@@ -148,16 +175,17 @@ extension ListBooksViewController: UITableViewDelegate, UITableViewDataSource {
                 "content-Type" : "application/json"
             ]
             let url = URL(string: "http://localhost:3000/books/\((self.bookList![indexPath.row].id)!)")
-            let textField = alert?.textFields![0] // Force unwrapping because we know it exists.
+            let bookName = alert?.textFields![0] // Force unwrapping because we know it exists.
             
             let parameters: [String: Any]? = [
-                "name" : textField?.text! ?? ""
+                "name" : bookName?.text! ?? ""
             ]
             Alamofire.request(url!, method: HTTPMethod.patch,
                               parameters: parameters,
                               encoding: JSONEncoding.default,
                               headers: headers).responseString(completionHandler: { (response) in
-                print("\(response)")
+                                self.bookList![indexPath.row].name = bookName?.text!
+                                self.booksTableView?.reloadData()
             })
         }))
         
