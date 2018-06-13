@@ -9,4 +9,6 @@ target 'SeedProject' do
   pod 'SwiftLint'
   pod 'Alamofire', '~> 4.7'
   pod 'SwiftyBeaver'
+  #Theming framework : https://github.com/jiecao-fm/SwiftTheme
+  pod 'SwiftTheme'
 end
