@@ -17,7 +17,7 @@ A starter iOS project which can act as a template for any iOS application
 
 1. Install all MacOS Dependencies as described above
 2.Using git
-- Clone  [a link](https://bitbucket.org/intimetec/mock-server/) Repository
+- Clone  [this](https://bitbucket.org/intimetec/mock-server/) Repository
 - Run mock server using the steps mentioned in the Readme file
 3. Using git
 - Clone this Repository
@@ -31,8 +31,8 @@ A starter iOS project which can act as a template for any iOS application
 
 ##### 3rd Party Dependencies in the Project and their references :
 
-1. Alamofire : Alamofire is an HTTP networking library written in Swift. [a link](https://github.com/Alamofire/Alamofire)
-2. SwiftLint : A tool to enforce Swift style and conventions. [a link](https://github.com/realm/SwiftLint)
-3. SwiftyBeaver : Convenient logging during development & release in Swift 2, 3 & 4 [a link](https://github.com/SwiftyBeaver/SwiftyBeaver)
-4. SwiftTheme :  Powerful theme/skin manager for iOS 8+ [a link] (https://github.com/jiecao-fm/SwiftTheme)
+1. [Alamofire](https://github.com/Alamofire/Alamofire) : Alamofire is an HTTP networking library written in Swift.
+2. [SwiftLint](https://github.com/realm/SwiftLint) : A tool to enforce Swift style and conventions.
+3. [SwiftyBeaver](https://github.com/SwiftyBeaver/SwiftyBeaver) : Convenient logging during development & release in Swift 2, 3 & 4
+4. [SwiftTheme](https://github.com/jiecao-fm/SwiftTheme) :  Powerful theme/skin manager for iOS 8+ 
 
